@@ -1,3 +1,4 @@
+
 """
 Django settings for NeogyckSeo project.
 
@@ -11,21 +12,21 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g*0cj@if2_7_&s1zk+y88epe=%@o9i%6q^)9oyi4&#+x$6@&cz'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-g*0cj@if2_7_&s1zk+y88epe=%@o9i%6q^)9oyi4&#+x$6@&cz')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'NeogyckSeo.urls'
@@ -77,11 +79,11 @@ WSGI_APPLICATION = 'NeogyckSeo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u777446942_neogycktools',
-        'USER': 'u777446942_neogycktools24',
-        'PASSWORD': 'L30n@rd0W2B*neogyck',
-        'HOST': '193.203.175.67',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME', 'u777446942_neogycktools'),
+        'USER': os.getenv('DB_USER', 'u777446942_neogycktools24'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'L30n@rd0W2B*neogyck'),
+        'HOST': os.getenv('DB_HOST', '193.203.175.67'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
 
@@ -119,7 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
