@@ -1,0 +1,12 @@
+{% if message %}
+<p>{{ message }}</p>
+{% endif %} {% if position %}
+<p>La URL se encuentra en la posición: {{ position }}</p>
+{% endif %}
+
+<ul>
+  <p>Top 20 de los primeros resultados:</p>
+  {% for url in urls %}
+  <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+  {% endfor %}
+</ul>
