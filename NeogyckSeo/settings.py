@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'NeogyckSeo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'neogycktools',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'u777446942_neogycktools',
+        'USER': 'u777446942_neogycktools24',
+        'PASSWORD': 'L30n@rd0W2B*neogyck',
+        'HOST': '193.203.175.67',
         'PORT': '3306',
     }
 }

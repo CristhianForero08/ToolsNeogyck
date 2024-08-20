@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "NeogyckSeo/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "NeogyckSeo/wsgi.py"
+    }
+  ]
+}
