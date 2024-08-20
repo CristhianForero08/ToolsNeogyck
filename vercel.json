@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "/neogyckseo/wsgi.py",
+      "src": "/neogyckseo/neogyckseo/wsgi.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/neogyckseo/wsgi.py"
+      "dest": "/neogyckseo/neogyckseo/wsgi.py"
     }
   ]
 }
