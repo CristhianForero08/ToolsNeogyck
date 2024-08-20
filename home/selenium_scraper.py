@@ -1,3 +1,4 @@
+import os
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -75,8 +76,9 @@ def solve_captcha(captcha_site_key, page_url):
 def setup_driver():
     chrome_options = Options()
     # chrome_options.add_argument("--headless")  # Comentamos esta línea para que el navegador sea visible
-
-    service = Service('C:/Users/crist/OneDrive/Escritorio/Neogyck-Tools/NeogyckSeo/home/drive/chromedriver.exe')
+    driver_path = os.path.join(os.path.dirname(__file__), 'driver', 'chromedriver.exe')
+    service = Service(driver_path)
+    #service = Service('C:/Users/crist/OneDrive/Escritorio/Neogyck-Tools/NeogyckSeo/home/drive/chromedriver.exe')
     driver = webdriver.Chrome(service=service, options=chrome_options)
     return driver
 
