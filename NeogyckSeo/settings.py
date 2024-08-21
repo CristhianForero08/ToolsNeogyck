@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-g*0cj@if2_7_&s1zk+y
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', 'tools-neogyck.vercel.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
