@@ -69,8 +69,8 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'NeogyckSeo.wsgi.application'
+WSGI_APPLICATION = 'NeogyckSeo.wsgi.app'
+#WSGI_APPLICATION = 'NeogyckSeo.wsgi.application'
 
 
 # Database

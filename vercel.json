@@ -1,15 +1,26 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "/neogyckseo/neogyckseo/wsgi.py",
-      "use": "@vercel/python"
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    },
+    {
+      "src": "/neogyckseo/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/neogyckseo/neogyckseo/wsgi.py"
+      "dest": "neogyckseo/wsgi.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
   ]
 }
