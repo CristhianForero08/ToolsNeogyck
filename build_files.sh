@@ -1,2 +1,7 @@
+#!/bin/bash
+
+# Instala las dependencias
 pip install -r requirements.txt
-python3.9 manage.py collectstatic
+
+# Ejecuta la recopilación de archivos estáticos
+python3 manage.py collectstatic --noinput
