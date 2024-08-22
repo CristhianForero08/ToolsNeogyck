@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-g*0cj@if2_7_&s1zk+y88epe=%@o9i%6q^)9oyi4&#+x$6@&cz')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '')
 
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
@@ -53,10 +53,10 @@ WSGI_APPLICATION = 'NeogyckSeo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('DB_NAME', 'u777446942_neogycktools'),
-        'USER': os.getenv('DB_USER', 'u777446942_neogycktools24'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'L30n@rd0W2B*neogyck'),
-        'HOST': os.getenv('DB_HOST', '193.203.175.67'),
+        'NAME': os.getenv('DB_NAME', ''),
+        'USER': os.getenv('DB_USER', ''),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', ''),
         'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
